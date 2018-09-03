@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VoiceTube App</string>
+
+    <string name="list">List</string>
+    <string name="setting">Setting</string>
+    <string name="countdown">Countdown</string>
+
+    <string name="network_not_available">Please enable your Internet connection.</string>
+    <string name="server_not_available">VoiceTube server error.</string>
+
+</resources>

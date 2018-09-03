@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_list"
+        android:title="@string/list" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:title="@string/setting" />
+
+    <item
+        android:id="@+id/navigation_countdown"
+        android:title="@string/countdown" />
+</menu>
