@@ -17,6 +17,7 @@ class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>()  {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupView()
+        setupListener()
     }
 
     override fun getLayoutId(): Int {
@@ -30,33 +31,39 @@ class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>()  {
     private fun setupView() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.black)
 
-        bottomNavigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-
         val fragment = ListFragment.newInstance() as Fragment
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, fragment).commit()
+        replaceFragment(fragment)
+    }
+
+    private fun setupListener() {
+        bottomNavigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {
         when(it.itemId) {
             R.id.navigation_list -> {
                 val fragment = ListFragment.newInstance() as Fragment
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, fragment).commit()
+                replaceFragment(fragment)
                 true
             }
 
             R.id.navigation_setting -> {
                 val fragment = SettingFragment.newInstance() as Fragment
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, fragment).commit()
+                replaceFragment(fragment)
                 true
             }
 
             R.id.navigation_countdown -> {
                 val fragment = CountdownFragment.newInstance() as Fragment
-                supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, fragment).commit()
+                replaceFragment(fragment)
                 true
             }
         }
         false
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContent, fragment).commit()
     }
 
 }

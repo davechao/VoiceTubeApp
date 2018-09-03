@@ -17,4 +17,5 @@ abstract class MainFragmentProvider {
 
     @ContributesAndroidInjector
     abstract fun provideCountdownFragmentFactory(): CountdownFragment
+
 }
