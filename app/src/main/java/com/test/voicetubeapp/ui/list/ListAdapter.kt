@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
 import com.test.voicetubeapp.R
 import com.test.voicetubeapp.repository.model.VideoItem
@@ -37,6 +38,7 @@ class ListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         Glide.with(context)
                 .load(item.img)
+                .transition(withCrossFade())
                 .apply(options)
                 .into(holder.videoImageView)
 
