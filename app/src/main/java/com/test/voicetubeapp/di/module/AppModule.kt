@@ -5,6 +5,7 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.test.voicetubeapp.BuildConfig
+import com.test.voicetubeapp.app.Pref
 import com.test.voicetubeapp.repository.ApiService
 import com.test.voicetubeapp.utils.RandomIDGenerator
 import com.test.voicetubeapp.utils.SchedulerProvider
@@ -34,6 +35,12 @@ class AppModule {
     fun provideGson(): Gson {
         return GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
                 .create()
+    }
+
+    @Provides
+    @Singleton
+    fun providePref(gson: Gson, application: Application): Pref {
+        return Pref(gson, application.applicationContext, "VoiceTube_Prefs")
     }
 
     @Provides

@@ -5,6 +5,15 @@
     <string name="setting">Setting</string>
     <string name="countdown">Countdown</string>
 
+    <string name="video_header">影片</string>
+    <string name="notification_header">通知</string>
+
+    <string name="auto_play">自動播放</string>
+    <string name="subtitle_sync">字幕同步</string>
+    <string name="pause">查詢單字時暫停播放</string>
+    <string name="reminder">推薦影片提醒</string>
+    <string name="notification">學習通知</string>
+
     <string name="network_not_available">Please enable your Internet connection.</string>
     <string name="server_not_available">VoiceTube server error.</string>
 

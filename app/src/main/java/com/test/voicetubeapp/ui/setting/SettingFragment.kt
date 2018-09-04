@@ -5,6 +5,7 @@ import android.view.View
 import com.test.voicetubeapp.R
 import com.test.voicetubeapp.databinding.FragmentSettingBinding
 import com.test.voicetubeapp.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_setting.*
 
 class SettingFragment: BaseFragment<FragmentSettingBinding, SettingViewModel>() {
 
@@ -17,10 +18,13 @@ class SettingFragment: BaseFragment<FragmentSettingBinding, SettingViewModel>() 
         }
     }
 
+    private lateinit var settingAdapter: SettingAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
-        setupView()
+        setupAdapter()
+        setupData()
     }
 
     override fun getLayoutId(): Int {
@@ -31,12 +35,24 @@ class SettingFragment: BaseFragment<FragmentSettingBinding, SettingViewModel>() 
         return SettingViewModel::class.java
     }
 
+    override fun onPause() {
+        viewModel.storeSetting(settingAdapter.settingMap)
+        super.onPause()
+    }
+
     private fun setupToolbar() {
         binding.toolbarContainer.toolbarTitleText.text = getString(R.string.setting)
     }
 
-    private fun setupView() {
+    private fun setupAdapter() {
+        settingAdapter = SettingAdapter()
+        settingRecyclerView.setHasFixedSize(true)
+        settingRecyclerView.adapter = settingAdapter
+    }
 
+    private fun setupData() {
+        viewModel.initData()
+        settingAdapter.setData(viewModel.settingMap, viewModel.settingList)
     }
 
 }
