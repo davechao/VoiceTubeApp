@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.arch.lifecycle.MutableLiveData
 import com.test.voicetubeapp.repository.ApiRepository
-import com.test.voicetubeapp.repository.model.ApiRequest
 import com.test.voicetubeapp.repository.model.VideoItem
 import com.test.voicetubeapp.ui.base.BaseAndroidViewModel
 import com.test.voicetubeapp.utils.SchedulerProvider
@@ -35,12 +34,6 @@ class ListViewModel @Inject constructor(
         compositeDisposable.add(
                 apiRepository.fetchVideos("VoiceTube")
                         .compose(schedulerProvider.getSchedulersForSingle())
-                        .doOnSubscribe {
-
-                        }
-                        .doAfterTerminate {
-
-                        }
                         .subscribeBy(
                                 onSuccess = {
                                     videosLiveData.value = it.videos

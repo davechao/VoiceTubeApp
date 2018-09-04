@@ -48,7 +48,7 @@ class ListAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount() = videoList.size
 
     fun setData(list: MutableList<VideoItem>) {
-        videoList = list
+        videoList.addAll(list)
         notifyDataSetChanged()
     }
 
