@@ -72,7 +72,6 @@ class SettingViewModel @Inject constructor(
     }
 
     fun storeSetting(settingMap: MutableMap<String, Boolean>) {
-
         val autoPlay = settingMap[applicationContext.getString(R.string.auto_play)]
         val subtitleSync = settingMap[applicationContext.getString(R.string.subtitle_sync)]
         val pause = settingMap[applicationContext.getString(R.string.pause)]

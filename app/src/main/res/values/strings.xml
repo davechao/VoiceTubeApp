@@ -14,6 +14,9 @@
     <string name="reminder">推薦影片提醒</string>
     <string name="notification">學習通知</string>
 
+    <string name="hint_input_second">Please enter the number of seconds</string>
+    <string name="countdown_finish">Countdown Finished!</string>
+
     <string name="network_not_available">Please enable your Internet connection.</string>
     <string name="server_not_available">VoiceTube server error.</string>
 

@@ -13,6 +13,8 @@ class CountdownViewModel @Inject constructor(app: Application): BaseAndroidViewM
 
     private val compositeDisposable by lazy { CompositeDisposable() }
 
+    var second = 0.toLong()
+
     override fun onCleared() {
         compositeDisposable.clear()
         compositeDisposable.dispose()
