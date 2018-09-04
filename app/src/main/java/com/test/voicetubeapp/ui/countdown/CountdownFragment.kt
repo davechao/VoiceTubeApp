@@ -81,6 +81,7 @@ class CountdownFragment: BaseFragment<FragmentCountdownBinding, CountdownViewMod
                 isCountdown = false
                 countdownBtn.isEnabled = true
                 secondEditText.isEnabled = true
+                secondText.text = ""
                 Toast.makeText(context, getString(R.string.countdown_finish), Toast.LENGTH_SHORT).show()
             }
         }

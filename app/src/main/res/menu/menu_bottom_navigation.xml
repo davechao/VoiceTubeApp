@@ -3,13 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_list"
+        android:icon="@drawable/round_list"
         android:title="@string/list" />
 
     <item
         android:id="@+id/navigation_setting"
+        android:icon="@drawable/round_settings"
         android:title="@string/setting" />
 
     <item
         android:id="@+id/navigation_countdown"
+        android:icon="@drawable/round_timer"
         android:title="@string/countdown" />
 </menu>
