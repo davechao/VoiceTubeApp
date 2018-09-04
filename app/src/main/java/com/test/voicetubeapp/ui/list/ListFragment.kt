@@ -9,6 +9,7 @@ import com.test.voicetubeapp.databinding.FragmentListBinding
 import com.test.voicetubeapp.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_list.*
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 
 class ListFragment: BaseFragment<FragmentListBinding, ListViewModel>() {
 
@@ -72,6 +73,10 @@ class ListFragment: BaseFragment<FragmentListBinding, ListViewModel>() {
             for(i in 1..3) {
                 listAdapter.setData(it!!)
             }
+        })
+
+        viewModel.toastLiveData.observe(this, Observer {
+            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         })
     }
 

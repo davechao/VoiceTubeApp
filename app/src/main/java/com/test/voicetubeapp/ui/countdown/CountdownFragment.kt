@@ -71,7 +71,7 @@ class CountdownFragment: BaseFragment<FragmentCountdownBinding, CountdownViewMod
     }
 
     private fun startCountDownTimer(milliseconds: Long) {
-        countDownTimer = object: CountDownTimer(milliseconds, 1000)  {
+        countDownTimer = object: CountDownTimer(milliseconds + 500, 1000)  {
             override fun onTick(millisUntilFinished: Long) {
                 viewModel.second = millisUntilFinished / 1000
                 secondText.text = (millisUntilFinished / 1000).toString()
