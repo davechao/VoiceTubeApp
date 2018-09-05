@@ -52,7 +52,6 @@ class CountdownTest {
                                 1),
                         isDisplayed()))
         appCompatEditText.perform(replaceText("10"), closeSoftKeyboard())
-
     }
 
     private fun clickCountdownBtn() {
