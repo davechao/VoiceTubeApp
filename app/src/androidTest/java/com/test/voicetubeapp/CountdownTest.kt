@@ -64,7 +64,7 @@ class CountdownTest {
                                         0),
                                 2),
                     isDisplayed()))
-        appCompatButton.perform(click());
+        appCompatButton.perform(click())
     }
 
 }
